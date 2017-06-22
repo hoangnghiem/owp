@@ -7,7 +7,8 @@ class Registration::CreateMerchantTest < ActiveSupport::TestCase
       first_name: 'Foo', 
       last_name: 'Bar', 
       email: 'newuser@gmail.com', 
-      merchant_name: 'New Merchant'
+      merchant_name: 'New Merchant',
+      password: '123123'
     }
     service = Registration::CreateMerchant.new(params)
     result = service.call
@@ -20,7 +21,8 @@ class Registration::CreateMerchantTest < ActiveSupport::TestCase
       first_name: 'Hoang', 
       last_name: 'Nghiem', 
       email: 'hoangnghiem1711@gmail.com', 
-      merchant_name: 'Tutudumonde'
+      merchant_name: 'Tutudumonde',
+      password: '123123'
     }
     service = Registration::CreateMerchant.new(params)
     assert_not service.call.success?

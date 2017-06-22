@@ -52,6 +52,8 @@ group :development, :test do
   gem "mocha"
   gem "minitest-reporters"
   gem 'simplecov', require: false
+  gem 'faker'
+  gem 'factory_girl_rails'
 end
 
 group :development do

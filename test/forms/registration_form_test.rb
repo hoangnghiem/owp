@@ -6,7 +6,8 @@ class RegistrationFormTest < ActiveSupport::TestCase
       first_name: 'hoang', 
       last_name: 'nghiem', 
       email: 'newuser@gmail.com',
-      merchant_name: 'New Merchant'
+      merchant_name: 'New Merchant',
+      password: 'New Merchant'
     }
     form = RegistrationForm.new(params)
     valid = form.valid?
@@ -18,7 +19,8 @@ class RegistrationFormTest < ActiveSupport::TestCase
       first_name: 'hoang', 
       last_name: 'nghiem', 
       email: 'hoangnghiem1711@gmail.com',
-      merchant_name: 'Tutudumonde'
+      merchant_name: 'Tutudumonde',
+      password: '123123'
     }
     form = RegistrationForm.new(params)
     valid = form.valid?

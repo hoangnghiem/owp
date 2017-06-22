@@ -3,21 +3,23 @@ class RegistrationForm < BaseForm
   attribute :first_name, :string
   attribute :last_name, :string
   attribute :merchant_name, :string
+  attribute :password, :string
 
   validates :email, presence: true, email: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :merchant_name, presence: true
+  validates :password, presence: true
 
   validate :email_cannot_taken
   validate :merchant_name_cannot_taken
 
   def attributes
-    instance_values.symbolize_keys!.slice(:email, :first_name, :last_name, :merchant_name)
+    instance_values.symbolize_keys!.slice(:email, :first_name, :last_name, :merchant_name, :password)
   end
   
   def user_attributes
-    attributes.slice(:email, :first_name, :last_name)
+    attributes.slice(:email, :first_name, :last_name, :password)
   end
   
   def merchant_attributes
