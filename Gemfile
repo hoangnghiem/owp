@@ -39,6 +39,12 @@ gem 'annotate'
 gem 'active_model_attributes'
 gem 'email_validator'
 
+# Complete countries & regions, currency data from the iso-codes Debian package
+gem 'carmen'
+gem 'carmen-iso-4217'
+gem 'money'
+gem 'monetize'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
