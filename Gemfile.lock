@@ -24,6 +24,9 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_model_attributes (1.2.0)
+      activemodel (>= 5.0)
+      activesupport (>= 5.0)
     activejob (5.1.1)
       activesupport (= 5.1.1)
       globalid (>= 0.3.6)
@@ -67,6 +70,8 @@ GEM
       responders
       warden (~> 1.2.3)
     docile (1.1.5)
+    email_validator (1.6.0)
+      activemodel
     erubi (1.6.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -227,10 +232,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_attributes
   annotate
   byebug
   capybara (~> 2.13)
   devise
+  email_validator
   guard
   guard-minitest
   jbuilder (~> 2.5)

@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+tutu_admin:
+  merchant: tutu
+  user: admin
+  role: <%= MerchantStaff.roles[:admin] %>

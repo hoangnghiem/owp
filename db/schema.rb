@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621145443) do
+ActiveRecord::Schema.define(version: 20170621161243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "merchant_staffs", force: :cascade do |t|
+    t.bigint "merchant_id"
+    t.bigint "user_id"
+    t.integer "role", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["merchant_id"], name: "index_merchant_staffs_on_merchant_id"
+    t.index ["user_id"], name: "index_merchant_staffs_on_user_id"
+  end
+
+  create_table "merchants", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,4 +55,6 @@ ActiveRecord::Schema.define(version: 20170621145443) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "merchant_staffs", "merchants"
+  add_foreign_key "merchant_staffs", "users"
 end

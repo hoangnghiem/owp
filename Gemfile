@@ -35,6 +35,10 @@ gem 'devise'
 # Show database table columns on models
 gem 'annotate'
 
+# Support Rails 5 Attribute API for ActiveModel
+gem 'active_model_attributes'
+gem 'email_validator'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
