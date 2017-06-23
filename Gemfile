@@ -44,6 +44,7 @@ gem 'carmen'
 gem 'carmen-iso-4217'
 gem 'money'
 gem 'monetize'
+gem 'money-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
