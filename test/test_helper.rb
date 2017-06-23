@@ -10,8 +10,8 @@ require 'faker'
 # Improved Minitest output (color and progress bar)
 require "minitest/reporters"
 # Minitest::Reporters.use!(Minitest::Reporters::ProgressReporter.new, ENV, Minitest.backtrace_filter)
-# Minitest::Reporters.use!(Minitest::Reporters::SpecReporter.new, ENV, Minitest.backtrace_filter)
-Minitest::Reporters.use!(Minitest::Reporters::DefaultReporter.new, ENV, Minitest.backtrace_filter)
+Minitest::Reporters.use!(Minitest::Reporters::SpecReporter.new, ENV, Minitest.backtrace_filter)
+# Minitest::Reporters.use!(Minitest::Reporters::DefaultReporter.new, ENV, Minitest.backtrace_filter)
 
 
 class ActiveSupport::TestCase

@@ -4,17 +4,11 @@
 # actually performing work in the Service object.
 class BaseForm
   include ActiveModel::Model 
-  include ActiveModelAttributes
   include ActiveModel::Validations
   include ActiveModel::Validations::Callbacks
+  include Virtus.model
 
   before_validation :clean_attributes
-
-  attr_reader :attributes
-
-  def attributes
-    raise NotImplementedError
-  end
 
   protected
 

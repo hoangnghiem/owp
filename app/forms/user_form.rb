@@ -1,8 +1,8 @@
 class UserForm < BaseForm
-  attribute :email, :string
-  attribute :first_name, :string
-  attribute :last_name, :string
-  attribute :password, :string
+  attribute :email, String
+  attribute :first_name, String
+  attribute :last_name, String
+  attribute :password, String
 
   validates :email, presence: true, email: true
   validates :first_name, presence: true
@@ -10,10 +10,6 @@ class UserForm < BaseForm
   validates :password, presence: true
 
   validate :email_cannot_taken
-
-  def attributes
-    instance_values.symbolize_keys!.slice(:email, :first_name, :last_name, :password)
-  end
 
   protected
 

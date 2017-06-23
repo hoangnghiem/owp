@@ -3,7 +3,12 @@ FactoryGirl.define do
     first_name         { Faker::Name.first_name }
     last_name          { Faker::Name.last_name }
     email              { Faker::Internet.email }
-    encrypted_password { User.new.send(:password_digest, "123123") }
+    # encrypted_password { User.new.send(:password_digest, "123123") }
     confirmed_at       { Time.current - 1.day }
+    password 'sercret'
+
+    factory :user_unconfirmed do
+      confirmed_at nil
+    end
   end
 end

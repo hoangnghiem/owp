@@ -3,29 +3,22 @@ require 'test_helper'
 class Registration::CreateMerchantTest < ActiveSupport::TestCase
 
   test "call success" do
-    params = {
-      first_name: 'Foo', 
-      last_name: 'Bar', 
-      email: 'newuser@gmail.com', 
-      merchant_name: 'New Merchant',
-      password: '123123'
-    }
+    params = attributes_for(:user, merchant_name: 'New Merchant')
     service = Registration::CreateMerchant.new(params)
     result = service.call
+
     assert result.success?
     assert_instance_of User, result.data
   end
 
   test "call error" do
-    params = {
-      first_name: 'Hoang', 
-      last_name: 'Nghiem', 
-      email: 'hoangnghiem1711@gmail.com', 
-      merchant_name: 'Tutudumonde',
-      password: '123123'
-    }
+    create(:merchant, name: 'Tutu')
+    params = attributes_for(:user_unconfirmed, merchant_name: 'Tutu')
     service = Registration::CreateMerchant.new(params)
-    assert_not service.call.success?
+    result = service.call
+
+    assert_not result.success?
+    assert_instance_of RegistrationForm, result.error
   end
 
 end

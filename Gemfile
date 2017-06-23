@@ -35,8 +35,6 @@ gem 'devise'
 # Show database table columns on models
 gem 'annotate'
 
-# Support Rails 5 Attribute API for ActiveModel
-gem 'active_model_attributes'
 gem 'email_validator'
 
 # Complete countries & regions, currency data from the iso-codes Debian package
@@ -45,6 +43,7 @@ gem 'carmen-iso-4217'
 gem 'money'
 gem 'monetize'
 gem 'money-rails'
+gem 'virtus'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
