@@ -44,6 +44,7 @@ gem 'money'
 gem 'monetize'
 gem 'money-rails'
 gem 'virtus'
+gem 'draper'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
