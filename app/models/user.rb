@@ -32,4 +32,7 @@ class User < ApplicationRecord
           :recoverable, 
           :rememberable, 
           :trackable
+
+  has_many :memberships
+  has_many :companies, through: :memberships
 end

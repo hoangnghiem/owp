@@ -43,8 +43,10 @@ gem 'carmen-iso-4217'
 gem 'money'
 gem 'monetize'
 gem 'money-rails'
-gem 'virtus'
 gem 'draper'
+gem 'virtus'
+
+gem 'friendly_id', '~> 5.1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

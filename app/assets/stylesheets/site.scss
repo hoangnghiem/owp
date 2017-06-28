@@ -1,0 +1,14 @@
+// 1. Your custom variables and variable overwrites.
+
+// 2. Import default variables and available mixins.
+@import "uikit/src/scss/variables.scss";
+@import "uikit/src/scss/mixins.scss";
+
+// 3. Your custom mixin overwrites.
+// @import "site/theme/navbar-mixins.scss";
+
+// 4. Import UIkit
+ @import "uikit/src/scss/uikit.scss";
+
+// 5. App specific styles
+ @import "site/owp/import";

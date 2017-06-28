@@ -7,17 +7,4 @@ class BaseForm
   include ActiveModel::Validations
   include ActiveModel::Validations::Callbacks
   include Virtus.model
-
-  before_validation :clean_attributes
-
-  protected
-
-  def clean_attributes
-    attributes.each do |attr, val|
-      if val.respond_to?(:strip)
-        self.send("#{attr.to_s}=", val.strip)
-      end
-    end
-  end
-
 end

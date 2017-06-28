@@ -20,7 +20,7 @@ class UserFormTest < ActiveSupport::TestCase
   end
 
   test "invalid with existence" do
-    create(:user, email: 'hoangnghiem1711@gmail.com')
+    create(:user, email: 'Hoangnghiem1711@gmail.com')
     params = attributes_for(:user_unconfirmed, email: 'hoangnghiem1711@gmail.com')
     form = UserForm.new(params)
     valid = form.valid?

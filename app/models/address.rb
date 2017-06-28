@@ -1,16 +1,14 @@
 class Address
   include ActiveModel::Model 
-  include ActiveModel::Validations
-  include ActiveModel::Validations::Callbacks
   include Virtus.model
 
-  attribute :street, String
-  attribute :apt, String # apt, suite, (optional)
-  attribute :suburb, String # (optional)
+  attribute :street, Attributes::StrippedString
+  attribute :apt, Attributes::StrippedString # apt, suite, (optional)
+  attribute :suburb, Attributes::StrippedString # (optional)
   attribute :country, String
   attribute :state, String
-  attribute :city, String
-  attribute :zip, String
+  attribute :city, Attributes::StrippedString
+  attribute :zip, Attributes::StrippedString
 
   validates :street, :country, :state, :city, :zip, presence: true
 
