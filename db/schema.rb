@@ -15,14 +15,13 @@ ActiveRecord::Schema.define(version: 20170624233818) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "companies", force: :cascade do |t|
+  create_table "businesses", force: :cascade do |t|
     t.string "name"
     t.string "slug"
-    t.jsonb "addresses", default: [], null: false
+    t.jsonb "address", default: "{}", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["addresses"], name: "index_companies_on_addresses", using: :gin
-    t.index ["slug"], name: "index_companies_on_slug", unique: true
+    t.index ["slug"], name: "index_businesses_on_slug", unique: true
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -38,14 +37,14 @@ ActiveRecord::Schema.define(version: 20170624233818) do
   end
 
   create_table "memberships", force: :cascade do |t|
-    t.bigint "company_id"
+    t.bigint "business_id"
     t.bigint "user_id"
     t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["company_id", "user_id"], name: "index_memberships_on_company_id_and_user_id", unique: true
-    t.index ["company_id"], name: "index_memberships_on_company_id"
-    t.index ["user_id", "company_id"], name: "index_memberships_on_user_id_and_company_id", unique: true
+    t.index ["business_id", "user_id"], name: "index_memberships_on_business_id_and_user_id", unique: true
+    t.index ["business_id"], name: "index_memberships_on_business_id"
+    t.index ["user_id", "business_id"], name: "index_memberships_on_user_id_and_business_id", unique: true
     t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
@@ -73,6 +72,6 @@ ActiveRecord::Schema.define(version: 20170624233818) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "memberships", "companies"
+  add_foreign_key "memberships", "businesses"
   add_foreign_key "memberships", "users"
 end

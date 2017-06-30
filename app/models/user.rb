@@ -34,5 +34,5 @@ class User < ApplicationRecord
           :trackable
 
   has_many :memberships
-  has_many :companies, through: :memberships
+  has_many :businesses, through: :memberships
 end

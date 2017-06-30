@@ -54,7 +54,6 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # Enable inline source map for sassc
   config.sass.inline_source_maps = true
-  
+
 end

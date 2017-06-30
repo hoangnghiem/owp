@@ -8,6 +8,7 @@ class UserFormTest < ActiveSupport::TestCase
     valid = form.valid?
 
     assert valid
+    assert_instance_of User, form.user
   end
 
   test "invalid with empty data" do

@@ -48,6 +48,9 @@ gem 'virtus'
 
 gem 'friendly_id', '~> 5.1.0'
 
+gem 'simple_form'
+gem 'faker'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -61,7 +64,6 @@ group :development, :test do
   gem "mocha"
   gem "minitest-reporters"
   gem 'simplecov', require: false
-  gem 'faker'
   gem 'factory_girl_rails'
 end
 

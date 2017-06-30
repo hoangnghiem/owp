@@ -1,0 +1,7 @@
+<% level_map = {'alert' => 'danger'} %>
+<% flash.each do |type, message| %>
+  <div class="uk-alert-<%= level_map[type] || type %>" uk-alert>
+    <button class="uk-alert-close" type="button" uk-close></button>
+    <p><%= message %></p>
+  </div>
+<% end %>

@@ -16,7 +16,32 @@ class AddressTest < ActiveSupport::TestCase
     valid = address.valid?
 
     assert_not valid
-    assert_equal 5, address.errors.count
+    assert_equal 4, address.errors.count
   end
+
+  test "validate country with states" do
+    address = Address.new(country: 'AU')
+    valid = address.valid?
+
+    assert_not valid
+    assert_equal 4, address.errors.count
+  end
+
+  test "validate country without states" do
+    address = Address.new(country: 'AI')
+    valid = address.valid?
+
+    assert_not valid
+    assert_equal 3, address.errors.count
+  end
+
+  # test "serializer #load" do
+  #   address = Address.load(address_attrs = attributes_for(:address))
+  #   assert_instance_of Address, address
+  # end
+  #
+  # test "serializer #dump" do
+  #   Address.dump(build(:address))
+  # end
 
 end

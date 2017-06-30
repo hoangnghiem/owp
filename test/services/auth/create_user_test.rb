@@ -1,10 +1,10 @@
 require 'test_helper'
 
-class Registration::CreateUserTest < ActiveSupport::TestCase
+class Auth::CreateUserTest < ActiveSupport::TestCase
 
   test "call success" do
     params = attributes_for(:user_unconfirmed)
-    service = Registration::CreateUser.new(params)
+    service = Auth::CreateUser.new(params)
     result = service.call
 
     assert result.success?
@@ -14,7 +14,7 @@ class Registration::CreateUserTest < ActiveSupport::TestCase
   test "call error" do
     create(:user, email: 'foo@bar.com')
     params = attributes_for(:user_unconfirmed, email: 'foo@bar.com')
-    service = Registration::CreateUser.new(params)
+    service = Auth::CreateUser.new(params)
     result = service.call
 
     assert_not result.success?

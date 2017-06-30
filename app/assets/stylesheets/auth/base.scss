@@ -1,0 +1,33 @@
+@import "uikit/src/scss/variables-theme.scss";
+
+html {
+  background-color: #ECEFF1;
+}
+
+// =====================================================
+// Responsive Heading
+// =====================================================
+h1, .uk-h1 { font-size: $base-h1-font-size * .7; }
+h2, .uk-h2 { font-size: $base-h2-font-size * .7; }
+h3, .uk-h3 { font-size: $base-h3-font-size * .7; }
+h4, .uk-h4 { font-size: $base-h4-font-size * .7; }
+h5, .uk-h5 { font-size: $base-h5-font-size * .7; }
+h6, .uk-h6 { font-size: $base-h6-font-size * .7; }
+
+@media (min-width: $breakpoint-small) {
+  h1, .uk-h1 { font-size: $base-h1-font-size * .9; }
+  h2, .uk-h2 { font-size: $base-h2-font-size * .9; }
+  h3, .uk-h3 { font-size: $base-h3-font-size * .9; }
+  h4, .uk-h4 { font-size: $base-h4-font-size * .9; }
+  h5, .uk-h5 { font-size: $base-h5-font-size; }
+  h6, .uk-h6 { font-size: $base-h6-font-size; }
+}
+
+@media (min-width: $breakpoint-medium) {
+  h1, .uk-h1 { font-size: $base-h1-font-size; }
+  h2, .uk-h2 { font-size: $base-h2-font-size; }
+  h3, .uk-h3 { font-size: $base-h3-font-size; }
+  h4, .uk-h4 { font-size: $base-h4-font-size; }
+  h5, .uk-h5 { font-size: $base-h5-font-size; }
+  h6, .uk-h6 { font-size: $base-h6-font-size; }
+}

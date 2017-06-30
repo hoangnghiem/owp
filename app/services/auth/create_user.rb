@@ -1,5 +1,5 @@
 # Normal user sign up
-class Registration::CreateUser < BaseService
+class Auth::CreateUser < BaseService
 
   def initialize(params)
     @params = params
@@ -9,8 +9,8 @@ class Registration::CreateUser < BaseService
     form = UserForm.new(params)
 
     if form.valid?
-      user = User.new(form.attributes)
-      user.save
+      user = form.user
+      user.save!
       Success.new(user)
     else
       Error.new(form)
