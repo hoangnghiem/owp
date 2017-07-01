@@ -5,7 +5,7 @@ FactoryGirl.define do
     email              { Faker::Internet.email }
     # encrypted_password { User.new.send(:password_digest, "123123") }
     confirmed_at       { Time.current - 1.day }
-    password 'sercret'
+    password 'secret'
 
     factory :user_unconfirmed do
       confirmed_at nil

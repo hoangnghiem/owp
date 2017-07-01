@@ -71,6 +71,7 @@ GEM
       carmen
     childprocess (0.7.0)
       ffi (~> 1.0, >= 1.0.11)
+    cliver (0.3.2)
     coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -170,6 +171,10 @@ GEM
       shellany (~> 0.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
+    poltergeist (1.15.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      websocket-driver (>= 0.2.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -304,6 +309,7 @@ DEPENDENCIES
   money
   money-rails
   pg (~> 0.18)
+  poltergeist
   puma (~> 3.7)
   rails (~> 5.1.1)
   sassc-rails

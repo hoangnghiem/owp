@@ -7,7 +7,7 @@ result = Auth::CreateWholesaler.new({
   last_name: 'Jones',
   street: Faker::Address.street_address,
   country: 'AU',
-  state: Carmen::Country.coded('AU').subregions.map { |s| s.code}.sample,
+  state: Carmen::Country.coded('AU').subregions.map { |s| s.code }.sample,
   city: Faker::Address.city,
   zip: Faker::Address.zip
 }).call
