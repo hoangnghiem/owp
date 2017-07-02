@@ -1,0 +1,63 @@
+/* ------------------------------------------------
+   App Specific Variables
+------------------------------------------------- */
+$owp-navbar-text-color: rgba(255, 255, 255, 0.8);
+$owp-navbar-text-hover-color: #FFFFFF;
+
+// refer to https://material.io/guidelines/style/color.html#color-color-palette
+$owp-color-white: #FFFFFF;
+$owp-color-black: #000000;
+
+$owp-color-bluegrey-500: #607D8B;
+$owp-color-bluegrey-50: #ECEFF1;
+$owp-color-bluegrey-100: #CFD8DC;
+$owp-color-bluegrey-200: #B0BEC5;
+$owp-color-bluegrey-300: #90A4AE;
+$owp-color-bluegrey-400: #78909C;
+$owp-color-bluegrey-500: #607D8B;
+$owp-color-bluegrey-600: #546E7A;
+$owp-color-bluegrey-700: #455A64;
+$owp-color-bluegrey-800: #37474F;
+$owp-color-bluegrey-900: #263238;
+
+/* -------------------------------------------------
+   UIKit Override Variables
+------------------------------------------------- */
+$global-color: #212121;
+$global-background: #ECEFF1;
+$global-primary-background: #009dd9;
+
+// Form
+// $form-background: #fafafa;
+
+// Background
+$background-default-background: #FFFFFF;
+
+// Breadcrumb
+// $breadcrumb-item-color: $global-color;
+$breadcrumb-item-font-size: 13px;
+$breadcrumb-divider-margin-horizontal: 8px;
+$breadcrumb-divider: "\00bb" ;
+
+// Padding
+$padding-small-padding: 20px;
+
+// Utilities
+$logo-color: $owp-navbar-text-hover-color;
+$logo-hover-color: $owp-navbar-text-hover-color;
+
+// Navbar
+$navbar-background: #455A64;
+$navbar-nav-item-height: 60px !default;
+$navbar-nav-item-color: $owp-navbar-text-color;
+$navbar-nav-item-hover-color: $owp-navbar-text-hover-color;
+$navbar-toggle-color: $owp-navbar-text-color;
+$navbar-toggle-hover-color: $owp-navbar-text-hover-color;
+$navbar-dropdown-background: #FFFFFF;
+
+// Dropdown
+$dropdown-background: #FFFFFF;
+$dropdown-margin: 2;
+
+// Drop
+$drop-margin: 5px;

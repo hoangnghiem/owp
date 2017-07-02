@@ -1,0 +1,19 @@
+@import 'store/variables';
+
+.owp-subnav > * > :first-child {
+  color: #333;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+/* Hover + Focus */
+.owp-subnav > * > a:hover,
+.owp-subnav > * > a:focus {
+  color: $global-primary-background;
+}
+
+/* Active */
+.uk-subnav > .uk-active > a {
+  color: $global-primary-background;
+}

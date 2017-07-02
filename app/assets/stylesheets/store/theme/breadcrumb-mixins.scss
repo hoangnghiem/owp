@@ -1,0 +1,14 @@
+@mixin hook-breadcrumb() {
+  vertical-align: middle;
+}
+
+@mixin hook-breadcrumb-divider() {
+  font-size: 12px;
+}
+
+.uk-breadcrumb {
+  margin-bottom: 5px;
+} 
+.uk-breadcrumb .root a {
+  font-size: 18px;
+}

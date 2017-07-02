@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Open Wholesale Platform</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'store', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'store', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="uk-offcanvas-content">
+      <%= render 'header' %>
+      <div class="uk-container uk-margin-small">
+        <%= yield %>
+      </div>
+      <%= render 'offcanvas' %>
+    </div>
+  </body>
+</html>

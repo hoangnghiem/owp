@@ -1,4 +1,6 @@
 class Store::BaseController < ApplicationController
+  layout 'store'
+
   before_action :authenticate_user!
 
   helper_method :current_business

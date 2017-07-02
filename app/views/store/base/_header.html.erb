@@ -1,0 +1,53 @@
+<!-- Main Nav -->
+<div class="uk-navbar-container">
+  <div class="uk-container uk-container-expand">
+    <nav class="uk-navbar">
+      <div class="uk-navbar-left">
+        <%= link_to current_business.name, dashboard_path, class: 'uk-navbar-item uk-logo uk-text-uppercase' %>
+      </div>
+      <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav uk-visible@m">
+          <li><a href="#" data-turbolinks="false"><i class="fa fa-bell-o fa-lg"></i></a></li>
+          <li>
+            <a href="#">
+              <i class="fa fa-user-circle fa-lg"></i>
+              <span class="owp-padding-lr-small"><%= current_user.first_name %></span>
+              <i class="fa fa-angle-down"></i>
+            </a>
+            <div class="uk-navbar-dropdown" uk-drop="align: right; mode: click;">
+              <ul class="uk-nav uk-navbar-dropdown-nav">
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Billing & Payment</a></li>
+                <li class="uk-nav-divider"></li>
+                <li>
+                  <%= link_to destroy_user_session_path(ws: nil), method: :delete do %>
+                    <span uk-icon="icon: sign-out"></span> Sign out
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <a class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon href="#offcanvas" uk-toggle></a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<!-- Sub Nav -->
+<div class="uk-container uk-background-default">
+  <ul class="uk-subnav owp-subnav" uk-margin>
+    <li class="uk-active"><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
+    <li>
+      <a href="#">Catalogue <span uk-icon="icon:  triangle-down"></span></a>
+      <div uk-dropdown="mode: click;">
+        <ul class="uk-nav uk-dropdown-nav">
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Suppliers</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

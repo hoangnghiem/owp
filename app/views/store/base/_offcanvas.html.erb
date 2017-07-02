@@ -1,0 +1,15 @@
+<div id="offcanvas" uk-offcanvas="overlay: true">
+  <div class="uk-offcanvas-bar">
+    <button class="uk-offcanvas-close" type="button" uk-close></button>
+    <ul class="uk-nav uk-nav-default">
+      <li><a href="#">Billing & Payment</a></li>
+      <li class="uk-nav-divider"></li>
+      <li>
+        <%= link_to destroy_user_session_path(ws: nil), method: :delete do %>
+          <span uk-icon="icon: sign-out"></span> Sign out
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
