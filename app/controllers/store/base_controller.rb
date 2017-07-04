@@ -15,4 +15,16 @@ class Store::BaseController < ApplicationController
     @current_business ||= Business.friendly.find(params[:ws])
   end
 
+  def add_breadcrumb(name, url = '')
+    @breadcrumbs ||= [] 
+    url = eval(url) if url =~ /_path|_url/
+    @breadcrumbs << [name, url] 
+  end
+
+  def self.add_breadcrumb(name, url, options = {})
+    before_action options do |controller| 
+      controller.send(:add_breadcrumb, name, url) 
+    end
+  end
+
 end

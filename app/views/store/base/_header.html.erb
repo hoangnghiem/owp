@@ -3,7 +3,7 @@
   <div class="uk-container uk-container-expand">
     <nav class="uk-navbar">
       <div class="uk-navbar-left">
-        <%= link_to current_business.name, dashboard_path, class: 'uk-navbar-item uk-logo uk-text-uppercase' %>
+        <%= link_to current_business.name, dashboard_path, class: 'uk-navbar-item uk-logo' %>
       </div>
       <div class="uk-navbar-right">
         <ul class="uk-navbar-nav uk-visible@m">
@@ -11,17 +11,17 @@
           <li>
             <a href="#">
               <i class="fa fa-user-circle fa-lg"></i>
-              <span class="owp-padding-lr-small"><%= current_user.first_name %></span>
+              <span class="owp-padding-lr-small uk-text-capitalize"><%= current_user.full_name %></span>
               <i class="fa fa-angle-down"></i>
             </a>
             <div class="uk-navbar-dropdown" uk-drop="align: right; mode: click;">
               <ul class="uk-nav uk-navbar-dropdown-nav">
                 <li><a href="#">Settings</a></li>
-                <li><a href="#">Billing & Payment</a></li>
+                <li><%= link_to t('nav.billing'), billing_path %></li>
                 <li class="uk-nav-divider"></li>
                 <li>
                   <%= link_to destroy_user_session_path(ws: nil), method: :delete do %>
-                    <span uk-icon="icon: sign-out"></span> Sign out
+                    <span uk-icon="icon: sign-out"></span> <%= t('nav.signout') %>
                   <% end %>
                 </li>
               </ul>
@@ -38,9 +38,9 @@
 <!-- Sub Nav -->
 <div class="uk-container uk-background-default">
   <ul class="uk-subnav owp-subnav" uk-margin>
-    <li class="uk-active"><a href="#"><i class="fa fa-home"></i> Dashboard</a></li>
-    <li>
-      <a href="#">Catalogue <span uk-icon="icon:  triangle-down"></span></a>
+    <li class="uk-active"><a href="#"><i class="fa fa-home"></i> <%= t('nav.dashboard') %></a></li>
+    <li class="">
+      <a href="#"><i class="fa fa-th-large"></i> <%= t('nav.products') %> <span uk-icon="icon:  triangle-down"></span></a>
       <div uk-dropdown="mode: click;">
         <ul class="uk-nav uk-dropdown-nav">
           <li><a href="#">Products</a></li>

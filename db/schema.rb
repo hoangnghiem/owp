@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624233818) do
+ActiveRecord::Schema.define(version: 20170702141830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "billing_plans", force: :cascade do |t|
+    t.string "stripe_id"
+    t.string "name"
+    t.string "currency"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
+    t.string "interval"
+    t.boolean "displayable", default: true
+    t.boolean "highlight", default: false
+    t.jsonb "quota", default: "{}", null: false
+    t.integer "trial_period_days", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "businesses", force: :cascade do |t|
     t.string "name"
@@ -40,6 +55,8 @@ ActiveRecord::Schema.define(version: 20170624233818) do
     t.bigint "business_id"
     t.bigint "user_id"
     t.string "role"
+    t.boolean "owner", default: false
+    t.boolean "boolean", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["business_id", "user_id"], name: "index_memberships_on_business_id_and_user_id", unique: true

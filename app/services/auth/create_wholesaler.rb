@@ -15,7 +15,7 @@ class Auth::CreateWholesaler< BaseService
       ActiveRecord::Base.transaction do
         business.save!
         user.save!
-        business.admins << user
+        business.owners << user
       end
 
       Success.new(user)

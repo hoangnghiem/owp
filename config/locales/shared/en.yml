@@ -1,0 +1,6 @@
+en:
+  nav:
+    dashboard: 'Dashboard'
+    billing: 'Subscriptions & Billing'
+    signout: 'Sign out'
+    products: 'Products'

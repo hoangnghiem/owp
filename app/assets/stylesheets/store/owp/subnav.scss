@@ -1,10 +1,18 @@
 @import 'store/variables';
 
 .owp-subnav > * > :first-child {
-  color: #333;
-  font-weight: bold;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  color: $global-secondary-background;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+  text-transform: capitalize;
+}
+
+.owp-subnav > * > a {
+  border-bottom: 3px solid $background-default-background;
 }
 
 /* Hover + Focus */
@@ -16,4 +24,5 @@
 /* Active */
 .uk-subnav > .uk-active > a {
   color: $global-primary-background;
+  border-bottom: 3px solid $global-primary-background;
 }

@@ -50,6 +50,8 @@ gem 'friendly_id', '~> 5.1.0'
 
 gem 'simple_form'
 gem 'faker'
+gem 'stripe'
+gem 'rails-i18n', '~> 5.0.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

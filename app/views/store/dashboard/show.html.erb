@@ -1,26 +1,19 @@
-<ul class="uk-breadcrumb">
-  <li class="root uk-disabled"><a href="#"><i class="fa fa-home"></i></a></li>
-  <li><a href="#">Item</a></li>
-  <li><a href="#">Disabled</a></li>
-  <li><span href="#">Active</span></li>
-</ul>
-
 <% page_header do %>
-  <div class="uk-h3">Dashboard</div>
+  <div class="uk-h3"><%= t '.header' %></div>
 <% end %>
 
 <% page_body do %>
   <p>Find me in app/views/store/dashboard/show.html.erb</p>
 
   <p uk-margin>
-      <button class="uk-button uk-button-default uk-button-small">Small button</button>
-      <button class="uk-button uk-button-primary uk-button-small">Small button</button>
-      <button class="uk-button uk-button-secondary uk-button-small">Small button</button>
+  <button class="uk-button uk-button-default uk-button-small">Small button</button>
+  <button class="uk-button uk-button-primary uk-button-small">Small button</button>
+  <button class="uk-button uk-button-secondary uk-button-small">Small button</button>
   </p>
 
   <p uk-margin>
-      <button class="uk-button uk-button-default uk-button-large">Large button</button>
-      <button class="uk-button uk-button-primary uk-button-large">Large button</button>
-      <button class="uk-button uk-button-secondary uk-button-large">Large button</button>
+  <button class="uk-button uk-button-default uk-button-large">Large button</button>
+  <button class="uk-button uk-button-primary uk-button-large">Large button</button>
+  <button class="uk-button uk-button-secondary uk-button-large">Large button</button>
   </p>
 <% end %>

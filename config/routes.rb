@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   scope module: 'store', path: 'ws/:ws' do
     root to: 'dashboard#show', as: :dashboard
     resources :products
+    resource :billing, only: [:show]
   end
 
 end

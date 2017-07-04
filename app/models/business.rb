@@ -19,11 +19,13 @@ class Business < ApplicationRecord
   has_many :memberships
   has_many :users, through: :memberships
   has_many :admins, -> { where(memberships: { role: Membership.roles[:admin] }) }, through: :memberships, source: :user
+  has_many :owners, -> { where(memberships: { role: Membership.roles[:admin], owner: true }) }, through: :memberships, source: :user
   has_many :staffs, -> { where(memberships: { role: Membership.roles[:staff] }) }, through: :memberships, source: :user
   has_many :agents, -> { where(memberships: { role: Membership.roles[:agents] }) }, through: :memberships, source: :user
 
-  # First created admin is consider the owner of the company
+  attr_reader :owner
+
   def owner
-    admins.order(:created_at).first
+    @owner ||= owners.first
   end
 end
