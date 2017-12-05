@@ -4,6 +4,7 @@ class CreateBusinesses < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :slug
       t.jsonb :address, null: false, default: '{}'
+      t.jsonb :locale_setting, null: false, default: '{}'
 
       t.timestamps
     end

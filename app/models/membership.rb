@@ -6,6 +6,8 @@
 #  business_id :integer
 #  user_id     :integer
 #  role        :string
+#  owner       :boolean          default(FALSE)
+#  boolean     :boolean          default(FALSE)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

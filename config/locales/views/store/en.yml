@@ -3,3 +3,8 @@ en:
     dashboard:
       shared:
         header: 'Dashboard'
+    products:
+      shared:
+        heading: 'Products'
+        add: 'Add Product'
+        edit: 'Edit Product'

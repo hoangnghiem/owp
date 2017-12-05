@@ -1,0 +1,29 @@
+<% page_header do %>
+  <div class="uk-h3"><%= t '.heading' %></div>
+  <div class="owp-page-actions">
+    <%= link_to t('.add'), new_product_path, class: 'uk-button uk-button-primary' %>
+  </div>
+<% end %>
+
+<% page_body do %>
+  <form class="uk-search uk-search-default uk-width-1-1">
+    <span uk-search-icon></span>
+    <input class="uk-search-input" type="search" placeholder="Search products...">
+  </form>
+
+  <table class="uk-table uk-table-small uk-table-responsive uk-table-divider owp-table-meta">
+    <thead>
+      <tr>
+        <th class="uk-table-shrink"></th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% 4.times do %>
+        <%= render 'product' %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

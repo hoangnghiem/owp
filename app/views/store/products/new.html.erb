@@ -1,0 +1,108 @@
+<% page_header do %>
+  <div class="uk-h3"><%= t '.edit' %></div>
+<% end %>
+
+<% page_body no_padding: true, no_background: true do %>
+  <%= owp_form_for @form do |f| %>
+    <ul class="uk-flex-center" uk-tab>
+      <li><a href="#">Details</a></li>
+      <li id="variants_pricing"><a href="#">Pricing & Variants</a></li>
+    </ul>
+
+    <div id="form_switcher" class="uk-switcher uk-margin">
+      <div class="uk-card uk-card-default uk-card-body uk-card-small">
+        <div uk-grid>
+          <div class="uk-width-2-5@m">
+            <%= f.input :picture do %>
+              <div class="test-upload uk-placeholder uk-text-center">
+                <i class="fa fa-upload"></i>
+                <span class="uk-text-middle">Upload pictures by dropping them here or</span>
+                <div uk-form-custom>
+                  <input type="file" multiple>
+                  <span class="uk-link">selecting one</span>
+                </div>
+              </div>
+              <progress id="progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+            <% end %>
+          </div>
+          <div class="uk-width-expand">
+            <%= f.input :name %>
+            <%= f.input :code, placeholder: 'Unique identify code of product', input_html: { data: {bind: "value: code"} } %>
+            <%= f.input :base_price do %>
+              <div class="uk-form-controls owp-input-group">
+                <%= f.input_field :base_price, class: 'uk-input' %>
+                <a class="uk-button uk-button-default owp-input-addon" data-behavior="edit-variants">Edit &#8594;</a>
+              </div>
+            <% end %>
+            <%= f.input :description, as: :text, input_html: { rows: 6 } %>
+          </div>
+        </div>
+      </div>
+      <div class="uk-card uk-card-default uk-card-body uk-card-small">
+        <div class="uk-overflow-auto">
+          <table class="uk-table uk-table-small uk-text-small uk-table-divider">
+            <thead>
+              <tr>
+                <th>SKU</th>
+                <th>Pricing</th>
+                <th>Weight</th>
+                <th>Dimension</th>
+                <!-- ko foreach: options -->
+                <th data-bind="text: $data"></th>
+                <!-- /ko -->
+                <th class="uk-table-shrink">
+                  <a class="uk-link-text" uk-toggle="target: #modal_add_option"><i class="fa fa-plus" title="Add Option" uk-tooltip></i></a>
+                </th>
+              </tr>
+            </thead>
+            <tbody data-bind="foreach: variants">
+              <tr>
+                <td>
+                  <span data-bind="text: sku, visible: !editing(), click: edit"></span>
+                  <input type="text" data-bind="value: sku, visible: editing(), hasFocus: edit" class="uk-input">
+                </td>
+                <td data-bind="text: price"></td>
+                <td data-bind="text: weight"></td>
+                <td data-bind="text: dimension"></td>
+                <!-- ko foreach: options -->
+                <td data-bind="text: type"></td>
+                <!-- /ko -->
+                <td><a class="uk-link-text"><i class="fa fa-trash-o" data-bind="click: $parent.removeVariant"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+          <a class="uk-button uk-button-small uk-button-primary" data-bind="click: addVariant">Add Variant</a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="uk-flex uk-flex-right">
+      <button class="uk-button uk-button-default uk-margin-small-right">Cancel</button>
+      <button class="uk-button uk-button-primary">Save</button>
+    </div>
+  <% end %>
+<% end %>
+
+<div id="modal_add_option" uk-modal>
+  <div class="uk-modal-dialog">
+    <form data-bind="submit: addOption" class="uk-form-stacked">
+    <button class="uk-modal-close-default" type="button" uk-close></button>
+    <div class="uk-modal-header">
+      <h4 class="uk-modal-title">Edit Option</h4>
+    </div>
+    <div class="uk-modal-body">
+      <div class="uk-margin">
+        <label class="uk-form-label" for="form-stacked-text">Text</label>
+        <div class="uk-form-controls">
+            <input data-bind="value: optionToEdit" class="uk-input" id="form-stacked-text" type="text">
+        </div>
+        <div class="uk-hint uk-text-small uk-text-muted">E.g. color, size, material</div>
+      </div>
+    </div>
+    <p class="uk-modal-footer uk-text-right">
+      <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+      <button class="uk-button uk-button-primary" type="submit">Save</button>
+    </p>
+    </form>
+  </div>
+</div>

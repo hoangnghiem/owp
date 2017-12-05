@@ -11,6 +11,7 @@ class Auth::CreateWholesaler< BaseService
     if form.valid?
       user = form.user
       business = form.business
+      business.locale_setting = LocaleSetting.new
 
       ActiveRecord::Base.transaction do
         business.save!

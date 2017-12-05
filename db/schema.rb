@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170702141830) do
+ActiveRecord::Schema.define(version: 20170705031916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20170702141830) do
     t.string "name"
     t.string "slug"
     t.jsonb "address", default: "{}", null: false
+    t.jsonb "locale_setting", default: "{}", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_businesses_on_slug", unique: true
@@ -65,6 +66,16 @@ ActiveRecord::Schema.define(version: 20170702141830) do
     t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.text "description"
+    t.bigint "business_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["business_id"], name: "index_products_on_business_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -89,6 +100,31 @@ ActiveRecord::Schema.define(version: 20170702141830) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "variants", force: :cascade do |t|
+    t.bigint "product_id"
+    t.string "sku"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
+    t.integer "retail_price_cents", default: 0, null: false
+    t.string "retail_price_currency", default: "USD", null: false
+    t.integer "cost_cents", default: 0, null: false
+    t.string "cost_currency", default: "USD", null: false
+    t.string "currency"
+    t.decimal "weight_value"
+    t.string "weight_unit"
+    t.decimal "length"
+    t.decimal "width"
+    t.decimal "height"
+    t.string "dimension_unit"
+    t.jsonb "options"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_variants_on_product_id"
+    t.index ["sku"], name: "index_variants_on_sku"
+  end
+
   add_foreign_key "memberships", "businesses"
   add_foreign_key "memberships", "users"
+  add_foreign_key "products", "businesses"
+  add_foreign_key "variants", "products"
 end

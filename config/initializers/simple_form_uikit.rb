@@ -34,6 +34,21 @@ SimpleForm.setup do |config|
     b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
   end
 
+  config.wrappers :uk_textarea, tag: 'div', class: 'uk-margin', error_class: 'uk-form-danger' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.optional :maxlength
+    b.optional :minlength
+    b.optional :pattern
+    b.optional :min_max
+    b.optional :readonly
+    b.use :label, class: 'uk-form-label'
+
+    b.use :input, class: 'uk-textarea', wrap_with: { tag: 'div', class: 'uk-form-controls' }
+    b.use :error, wrap_with: { tag: 'span', class: 'help-block' }
+    b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
+  end
+
   config.wrappers :inline_boolean, tag: 'div', class: 'uk-margin', error_class: 'uk-form-danger' do |b|
     b.use :html5
     b.optional :readonly
@@ -171,6 +186,7 @@ SimpleForm.setup do |config|
     email: :uk_input,
     url: :uk_input,
     tel: :uk_input,
+    text: :uk_textarea,
     password: :uk_input,
     search: :uk_input,
     uuid: :uk_input,

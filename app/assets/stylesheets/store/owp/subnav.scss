@@ -22,7 +22,12 @@
 }
 
 /* Active */
-.uk-subnav > .uk-active > a {
+.owp-subnav > .uk-active > a {
   color: $global-primary-background;
   border-bottom: 3px solid $global-primary-background;
+}
+
+.owp-subnav .owp-subnav-text {
+  padding-left: 5px;
+  padding-right: 0px;
 }

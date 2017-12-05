@@ -7,4 +7,9 @@ class BaseForm
   include ActiveModel::Validations
   include ActiveModel::Validations::Callbacks
   include Virtus.model
+
+  def model
+    raise NotImplementedError
+  end
+
 end

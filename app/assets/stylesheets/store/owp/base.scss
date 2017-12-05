@@ -1,3 +1,16 @@
+body {
+  padding-bottom: 40px;
+}
+
+.owp-page-header {
+  justify-content: space-between;
+}
+
 .owp-page-header > * {
   margin: 0;
+}
+
+abbr[title] {
+  text-decoration: none;
+  color: red;
 }

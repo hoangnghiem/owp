@@ -1,0 +1,12 @@
+.owp-input-group {
+  display: flex;
+}
+
+.owp-input-group input {
+  min-width: 0;
+}
+
+.owp-input-group > .owp-input-addon {
+  flex: 0 0 auto;
+}
+
